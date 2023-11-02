@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  db:
+    image: 'postgres'
+    container_name: postgres-db
+    restart: always
+    healthcheck:
+      interval: 2s
+      timeout: 5s
+      retries: 3
+      test: ["CMD-SHELL", "pg_isready"]
+    environment:
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: '12345678'
+      POSTGRES_DB: 'monke'
+    volumes:
+      - data:/var/lib/postgresql/data
+  server:
+    build: .
+    container_name: node-server
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+
+volumes:
+  data:
