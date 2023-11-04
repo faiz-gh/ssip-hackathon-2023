@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "db": "docker exec -it postgres-db psql -U admin -d monke",
-    "server": "docker exec -it node-server"
+    "server": "docker exec -it node-server",
+    "migrate:create": "knex migrate:make"
   },
   "repository": {
     "type": "git",

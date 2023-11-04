@@ -2,30 +2,30 @@
 
 ## Description
 
-This is a backend server template that uses Node.js and Express.js to create a server that serves JSON as a response to a REST API calls. Postgresql is used as the database and Knex.js is used as the query builder. Docker is used to configure the environment and run the database.
+This is the backend of the SSIP Hackathon website built using Node.js, Express.js, Knex, PostgreSQL and Docker. 
 
 ## Instructions
 
-**Step-1:** Fork and clone the repository.
+**Step-1:** Clone the ssip-hackathon-2023 repository.
 ```bash
-git clone https://github.com/faiz-gh/monke-exercise.git
+    git clone https://github.com/faiz-gh/ssip-hackathon-2023.git
 ```
 
 **Step-2:** Download and Install Docker Desktop from [here](https://www.docker.com/products/docker-desktop).
 
-**Step-3:** After installing Docker Desktop, open the terminal and go to the project directory.
+**Step-3:** After installing Docker Desktop, open the terminal and go to the backend directory inside the project.
 ```bash
-cd monke-exercise
+    cd backend
 ```
 
 **Step-4:** Run the following command to pull the node image from docker hub.
 ```bash
-docker pull node:lts-alpine3.18
+    docker pull node:lts-alpine3.18
 ```
 
 **Step-5:** Run the following command to build and run the postgres database.
 ```bash
-docker-compose up --build -d
+    docker-compose up --build -d
 ```
 
 ## Tips
@@ -49,6 +49,10 @@ docker-compose up --build -d
 * You can create a new migration using the following command:
 ```bash
     knex migrate:make migration-name
+```
+* You can migrate to the latest changes using the following command:
+```bash
+    knex migrate:latest
 ```
 * You can rollback the migrations using the following command:
 ```bash

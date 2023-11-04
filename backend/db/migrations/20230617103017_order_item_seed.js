@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
     return knex.raw(`
-		INSERT INTO "order_item" ("order_id", "product_id", "quantity", "base_price", "total_price") VALUES
+		 INSERT INTO "order_item" ("order_id", "product_id", "quantity", "base_price", "total_price") VALUES
 			(1, 1, 1, 999.99, 999.99),
 			(1, 2, 2, 1199.99, 2399.98),
 			(2, 3, 3, 899.99, 2699.97),
